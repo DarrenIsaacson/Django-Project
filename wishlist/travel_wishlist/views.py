@@ -36,7 +36,7 @@ def place_was_visited(request, place_pk):
             place.visited = True
             place.save()
         else:
-            return HttpResponseForbidden
+            return HttpResponseForbidden()
 
     return redirect('place_list')
 
@@ -72,4 +72,4 @@ def delete_place(request, place_pk):
         place.delete()
         return redirect('place_list')
     else:
-        return HttpResponseForbidden
+        return HttpResponseForbidden()
